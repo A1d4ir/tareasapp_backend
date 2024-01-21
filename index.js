@@ -1,10 +1,11 @@
 import express from "express";
-import json from "body-parser";
+import bodyParser from "body-parser";
 import tareasRouter from "./routes/tareasRoutes.js";
 import db from "./config/db.js";
 
 const app = express();
-app.use(json());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 app.use(tareasRouter);
 
